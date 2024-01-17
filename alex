@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                withSonarQubeEnv(credentialsId: 'sonar') {
+                withSonarQubeEnv('sonar') {
                     sh 'mvn -f my-app/pom.xml clean package sonar:sonar'
                 }
             }
